@@ -1,10 +1,8 @@
-import styles from "./styles.module.css";
-import type {ReactNode} from "react";
+import styles from './styles.module.css'
 
-type HeadingProps = {
-  children: ReactNode;
-}
-
-export function Heading({children}: HeadingProps) {
-  return <h1 className={styles.heading}>{children}</h1>;
+export function Footer() {
+  return <footer className={styles.footer}>
+    <a href="">Entenda como funciona a técnica pomodoro</a>
+    <a href=""> Chronos Pomodoro &copy; {new Date().getFullYear()} - Feito com 💚</a>
+  </footer>
 }
