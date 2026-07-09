@@ -9,52 +9,68 @@ import {DefaultInput} from "./components/DefaultInput";
 import {Cycles} from "./components/Cycles";
 import {DefaultButton} from "./components/DefaultButton";
 import {PlayCircleIcon} from "lucide-react";
-import {Footer} from "./components/Heading";
+import {Footer} from "./components/Footer";
+import {Heading} from "./components/Heading";
 
 export function App() {
-  return (<>
-    <Container>
-      <Logo/>
-    </Container>
-    <Container>
-      <Menu/>
-    </Container>
+  let numero = 0;
 
-    <Container>
-      <CountDown/>
-    </Container>
+  function handleClick() {
+    const span = document.getElementById("numero");
+    if (!span) return;
 
-    <Container>
-      <form className="form" action="">
+    numero += 1;
+    span.innerText = numero.toString();
+    console.log(numero, Date.now());
+  }
 
-        <div className="formRow">
-          <DefaultInput
-            labelText="task"
-            type="text"
-            id="meuInput"
-            placeholder="Digite algo"
-            defaultValue="Valor preenchido"
-          />
-        </div>
+  return (
+    <>
+      <Heading>Número: <span id="numero">{numero}</span></Heading>
+      <button onClick={handleClick}>Aumenta</button>
 
-        <div className="formRow">
-          <p>lorem ipsum dolor sit amet</p>
-        </div>
+      <Container>
+        <Logo/>
+      </Container>
+      <Container>
+        <Menu/>
+      </Container>
 
-        <div className="formRow">
-          <Cycles/>
-        </div>
+      <Container>
+        <CountDown/>
+      </Container>
 
-        <div className="formRow">
-          <DefaultButton icon={<PlayCircleIcon/>}/>
-        </div>
-      </form>
-    </Container>
+      <Container>
+        <form className="form" action="">
 
-    <Container>
-      <Footer/>
-    </Container>
+          <div className="formRow">
+            <DefaultInput
+              labelText={numero.toString()}
+              type="text"
+              id="meuInput"
+              placeholder="Digite algo"
+              defaultValue="Valor preenchido"
+            />
+          </div>
 
-  </>);
+          <div className="formRow">
+            <p>lorem ipsum dolor sit amet</p>
+          </div>
+
+          <div className="formRow">
+            <Cycles/>
+          </div>
+
+          <div className="formRow">
+            <DefaultButton icon={<PlayCircleIcon/>}/>
+          </div>
+        </form>
+      </Container>
+
+      <Container>
+        <Footer/>
+      </Container>
+
+    </>);
 }
 
