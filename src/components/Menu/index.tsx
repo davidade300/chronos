@@ -18,14 +18,15 @@ export function Menu() {
     })
   }
 
-  useEffect(() => {
-    console.log("useEffect sem dependencia")
-  }); // executado toda vez que o elemento renderiza na tela
-
   // useEffect(() => {
-  //   document.documentElement.setAttribute("data-theme", theme)
-  // }, []);
-  //
+  //   console.log("useEffect sem dependencia")
+  // }); // executado toda vez que o elemento renderiza na tela
+
+  useEffect(() => {
+    console.log("useEffect com array de deps vazia")
+    document.documentElement.setAttribute("data-theme", theme)
+  }, []); // executado apena quando o React monta o componente na tela pela primeira vez
+
   // useEffect(() => {
   //   document.documentElement.setAttribute("data-theme", theme)
   // }, [theme]);
