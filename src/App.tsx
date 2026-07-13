@@ -1,62 +1,59 @@
-import {Container} from "./components/Container";
-import {Logo} from "./components/Logo";
+import { Container } from './components/Container';
+import { Logo } from './components/Logo';
 
-import "./styles/theme.css";
-import "./styles/global.css";
-import {Menu} from "./components/Menu";
-import {CountDown} from "./components/CountDown";
-import {DefaultInput} from "./components/DefaultInput";
-import {Cycles} from "./components/Cycles";
-import {DefaultButton} from "./components/DefaultButton";
-import {PlayCircleIcon} from "lucide-react";
-import {Footer} from "./components/Footer";
+import './styles/theme.css';
+import './styles/global.css';
+import { Menu } from './components/Menu';
+import { CountDown } from './components/CountDown';
+import { DefaultInput } from './components/DefaultInput';
+import { Cycles } from './components/Cycles';
+import { DefaultButton } from './components/DefaultButton';
+import { PlayCircleIcon } from 'lucide-react';
+import { Footer } from './components/Footer';
 
 export function App() {
-
   return (
     <>
       <Container>
-        <Logo/>
+        <Logo />
       </Container>
       <Container>
-        <Menu/>
-      </Container>
-
-      <Container>
-        <CountDown/>
+        <Menu />
       </Container>
 
       <Container>
-        <form className="form" action="">
+        <CountDown />
+      </Container>
 
-          <div className="formRow">
+      <Container>
+        <form className='form' action=''>
+          <div className='formRow'>
             <DefaultInput
-              labelText="task"
-              type="text"
-              id="meuInput"
-              placeholder="Digite algo"
-              defaultValue="Valor preenchido"
+              labelText='task'
+              type='text'
+              id='meuInput'
+              placeholder='Digite algo'
+              defaultValue='Valor preenchido'
             />
           </div>
 
-          <div className="formRow">
+          <div className='formRow'>
             <p>lorem ipsum dolor sit amet</p>
           </div>
 
-          <div className="formRow">
-            <Cycles/>
+          <div className='formRow'>
+            <Cycles />
           </div>
 
-          <div className="formRow">
-            <DefaultButton icon={<PlayCircleIcon/>}/>
+          <div className='formRow'>
+            <DefaultButton icon={<PlayCircleIcon />} />
           </div>
         </form>
       </Container>
 
       <Container>
-        <Footer/>
+        <Footer />
       </Container>
-
-    </>);
+    </>
+  );
 }
-
