@@ -5,22 +5,20 @@ import type { TaskStateModel } from '../../models/taskStateModel.ts';
 import * as React from 'react';
 import { CountDown } from '../../components/CountDown';
 
-type HomeProps = {
+export type HomeProps = {
   state: TaskStateModel;
   setState: React.Dispatch<React.SetStateAction<TaskStateModel>>;
 };
 
 export function Home(props: HomeProps) {
-  const { state, setState } = props;
-
   return (
     <MainTemplate>
       <Container>
-        <CountDown />
+        <CountDown {...props} />
       </Container>
 
       <Container>
-        <MainForm />
+        <MainForm {...props} />
       </Container>
     </MainTemplate>
   );
