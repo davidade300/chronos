@@ -1,10 +1,4 @@
-import {
-  createContext,
-  type Dispatch,
-  type ReactNode,
-  type SetStateAction,
-  useContext,
-} from 'react';
+import { createContext, type Dispatch, type ReactNode, type SetStateAction, useContext, useState, } from 'react';
 import type { TaskStateModel } from '../../models/taskStateModel.ts';
 
 const initialState: TaskStateModel = {
@@ -36,8 +30,10 @@ type TaskContextProviderProps = {
 };
 
 export function TaskContextProvider({ children }: TaskContextProviderProps) {
+  const [state, setState] = useState(initialState);
+
   return (
-    <TaskContext.Provider value={initialContextValue}>
+    <TaskContext.Provider value={{ state, setState }}>
       {children}
     </TaskContext.Provider>
   );
